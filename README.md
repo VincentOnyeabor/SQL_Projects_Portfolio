@@ -1,4 +1,4 @@
-# In this project, I demonstrated my SQL skills by creating and managing a `friends` table in an SQLite database. I implemented various SQL operations including:
+In this project, I demonstrated my SQL skills by creating and managing a `friends` table in an SQLite database. I implemented various SQL operations including:
 
 - Creating a table structure
 - Inserting data into the table
