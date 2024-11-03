@@ -37,6 +37,8 @@ UPDATE
 DELETE
 ALTER TABLE
 
+```
+
 ## 🎓 Learning Outcomes
 
 - Gained practical experience in database management
