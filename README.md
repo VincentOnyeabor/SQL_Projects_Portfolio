@@ -24,6 +24,7 @@ Each project is contained in its own folder and includes:
 - **Performance Optimisation** ⚙️: Writing efficient queries for large datasets to improve performance and reduce processing time.
 - Among others
 
+## 
 
 Last Updated: 03/11/2024
 This portfolio is actively maintained and regularly updated as I progress in my SQL learning journey.
