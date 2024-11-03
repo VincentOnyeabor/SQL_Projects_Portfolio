@@ -27,4 +27,5 @@ Each project is contained in its own folder and includes:
 ## 
 
 Last Updated: 03/11/2024
+
 This portfolio is actively maintained and regularly updated as I progress in my SQL learning journey.
