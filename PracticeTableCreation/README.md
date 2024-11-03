@@ -29,14 +29,13 @@ This project showcases fundamental SQL operations and database management capabi
 ## 📝 SQL Commands Used
 
 ```sql
--- Examples of commands utilized:
+-- Core operations demonstrated:
 CREATE TABLE
 INSERT INTO
 SELECT
 UPDATE
 DELETE
 ALTER TABLE
-```
 
 ## 🎓 Learning Outcomes
 
