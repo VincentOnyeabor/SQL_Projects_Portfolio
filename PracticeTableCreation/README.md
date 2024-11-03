@@ -29,7 +29,7 @@ This project showcases fundamental SQL operations and database management capabi
 ## 📝 SQL Commands Used
 
 ```sql
--- Core operations demonstrated:
+
 CREATE TABLE
 INSERT INTO
 SELECT
