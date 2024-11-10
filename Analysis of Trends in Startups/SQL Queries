@@ -1,107 +1,86 @@
+## Basic Data Exploration
+
+-- View all startup data
 SELECT *
 FROM startups;
 
---- Calculate the total number of companies in the table
-
-SELECT COUNT (*)
+-- Calculate total number of companies
+SELECT COUNT(*)
 FROM startups;
 
---- total value of all companies
-
-SELECT SUM (valuation)
+-- Calculate total valuation of all companies
+SELECT SUM(valuation)
 FROM startups;
 
---- What is the highest amount raised by a startup?
+## Funding Analysis
 
-SELECT MAX (raised)
+-- Highest amount raised by any startup
+SELECT MAX(raised)
 FROM startups;
 
---- What is the highest amount raised by a startup during 'seed'stage?
-
-SELECT MAX (raised)
+-- Highest amount raised during seed stage
+SELECT MAX(raised)
 FROM startups
 WHERE stage = 'Seed';
 
---- In what year was the oldest company on the list founded?
-
-SELECT MIN (founded)
+-- Find the founding year of the oldest company
+SELECT MIN(founded)
 FROM startups;
 
---- Let's find out the valuations among different sectors:
+## Valuation Analysis by Category
 
--- Return the average valuation
-
-SELECT AVG (valuation)
+-- Overall average valuation
+SELECT AVG(valuation)
 FROM startups;
 
--- Return the average valuation in each category
-
+-- Average valuation by category
 SELECT category,
-  AVG (valuation)
+    AVG(valuation)
 FROM startups
 GROUP BY category;
 
--- Return the average valuation in each category, round the averages to two decimal places
-
+-- Average valuation by category (rounded to 2 decimal places)
 SELECT category,
-  ROUND (AVG (valuation), 2)
+    ROUND(AVG(valuation), 2)
 FROM startups
 GROUP BY category;
 
--- Return the average valuation in each category, round the averages to two decimal places and order the list from highest averages to lowest
-
+-- Categories ordered by average valuation (highest to lowest)
 SELECT category,
-  ROUND (AVG (valuation), 2)
+    ROUND(AVG(valuation), 2)
 FROM startups
 GROUP BY 1
 ORDER BY 2 DESC;
 
---- What are the most competitive markets?
+## Market Competition Analysis
 
--- Return the name of each category with the total number of companies that belong to it.
-
+-- Number of companies in each category
 SELECT category,
-  COUNT (category)
+    COUNT(category)
 FROM startups
 GROUP BY 1;
 
--- Filter the above result to only include categories that have more than three companies in them.
-
+-- Categories with more than 3 companies
 SELECT category,
-  COUNT (category)
+    COUNT(category)
 FROM startups
 GROUP BY 1
-HAVING COUNT (category) > 3;
+HAVING COUNT(category) > 3;
 
+## Geographic Analysis
 
---- Let's see if there's a difference in startups sizes among different locations:
-
--- What is the average size of a startup in each location?
-
+-- Average company size by location
 SELECT location,
-  ROUND (AVG (employees))
+    ROUND(AVG(employees))
 FROM startups
 GROUP BY location;
 
--- What is the average size of a startup in each location, with average sizes above 500?
-
+-- Locations with average company size above 500 employees
 SELECT location,
-  ROUND (AVG (employees))
+    ROUND(AVG(employees))
 FROM startups
 GROUP BY location
-HAVING AVG (employees) > 500;
-
-
-
-
-
-
-
-
-
-
-
-
+HAVING AVG(employees) > 500;
 
 
 
