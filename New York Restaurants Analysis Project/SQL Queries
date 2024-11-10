@@ -1,0 +1,69 @@
+ Basic Data Exploration
+
+-- View all columns and data
+SELECT *
+FROM nomnom;
+
+-- Get distinct neighborhoods
+SELECT DISTINCT neighbourhood
+FROM nomnom;
+
+-- Get distinct cuisine types
+SELECT DISTINCT cuisine
+FROM nomnom;
+
+
+Filtering Queries
+
+-- Find Chinese restaurants
+SELECT cuisine
+FROM nomnom
+WHERE cuisine = 'Chinese';
+
+-- Find highly rated restaurants (4+ stars)
+SELECT *
+FROM nomnom
+WHERE review >= 4;
+
+-- Find expensive Italian restaurants
+SELECT *
+FROM nomnom
+WHERE cuisine = 'Italian'
+AND price = '$$$';
+
+-- Search for restaurants with 'meatball' in the name
+SELECT *
+FROM nomnom
+WHERE name LIKE '%meatball%';
+
+-- Find restaurants in specific neighborhoods
+SELECT *
+FROM nomnom
+WHERE neighborhood = 'Midtown'
+OR neighborhood = 'Downtown'
+OR neighborhood = 'Chinatown';
+
+-- Find restaurants with pending health grades
+SELECT *
+FROM nomnom
+WHERE health IS NULL;
+
+
+Advanced Queries
+
+-- Top 10 Restaurants by Review Score
+SELECT *
+FROM nomnom
+ORDER BY review DESC
+LIMIT 10;
+
+-- Restaurant Rating Classification
+SELECT *,
+CASE
+    WHEN review > 4.5 THEN 'Extraordinary'
+    WHEN review > 4 THEN 'Excellent'
+    WHEN review > 3 THEN 'Good'
+    WHEN review > 2 THEN 'Fair'
+    ELSE 'Poor'
+END AS Performance
+FROM nomnom;
