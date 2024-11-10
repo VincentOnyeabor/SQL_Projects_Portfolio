@@ -1,4 +1,4 @@
-# SQL Friends Database Project
+# Friends Database Creation Project
 
 ## 📋 Overview
 A hands-on SQL project demonstrating database management skills through the creation and manipulation of a friends table using SQLite.
