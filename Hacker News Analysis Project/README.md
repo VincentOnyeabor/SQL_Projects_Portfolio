@@ -1,5 +1,3 @@
-### Hacker News Analysis Project
-
 ### Project Overview
 
 This project explores data from Hacker News to uncover insights into story scores, user contributions, popular sources, and optimal posting times.
