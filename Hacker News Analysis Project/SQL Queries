@@ -1,0 +1,54 @@
+-- 1. Top Stories by Score
+
+SELECT title, score
+FROM hacker_news
+ORDER BY score DESC
+LIMIT 5;
+
+-- 2. Total Score of All Stories
+
+SELECT SUM(score)
+FROM hacker_news;
+
+-- 3. High-Scoring Users (Score > 200)
+
+SELECT user,
+  SUM(score) AS 'Total score'
+FROM hacker_news
+GROUP BY user
+HAVING SUM(score) > 200
+ORDER BY 2 DESC;
+
+-- 4. Percentage of Total Points by Top Users
+
+SELECT (517 + 309 + 304 + 282) / 6366;
+
+-- 5. Rickrolling Users
+
+SELECT user,
+  COUNT(user) AS 'Number of Times posted'
+FROM hacker_news
+WHERE url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+GROUP BY user;
+
+-- 6. Source Sites (GitHub, Medium, NY Times)
+
+SELECT CASE
+  WHEN url LIKE '%github.com%' THEN 'GitHub'
+  WHEN url LIKE '%medium.com%' THEN 'Medium'
+  WHEN url LIKE '%nytimes.com%' THEN 'NYtimes'
+  ELSE 'Others'
+END AS 'Source',
+COUNT(title) AS 'Number of stories'
+FROM hacker_news
+GROUP BY 1;
+
+-- 7. Best Time to Post
+
+SELECT strftime('%H', timestamp) AS 'Hour', 
+   ROUND(AVG(score)) AS 'Average score',
+   COUNT(*) AS 'Number of stories'
+FROM hacker_news
+WHERE timestamp IS NOT NULL
+GROUP BY 1
+ORDER BY 2 DESC;
